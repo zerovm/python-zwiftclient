@@ -7,7 +7,6 @@ from sys import argv as sys_argv, exit
 from swiftclient.exceptions import ClientException
 from swiftclient.multithreading import MultiThreadingManager
 from swiftclient import RequestException
-from swiftclient import __version__ as client_version
 from optparse import OptionParser, SUPPRESS_HELP
 from os import environ
 from swiftclient.shell import parse_args, immediate_exit, \
@@ -15,6 +14,7 @@ from swiftclient.shell import parse_args, immediate_exit, \
 from swiftclient.utils import config_true_value
 from swiftclient import shell as swiftshell
 from zwiftclient.client import ZwiftConnection
+from zwiftclient import __version__ as client_version
 
 st_delete_options = swiftshell.st_delete_options
 st_delete_help = swiftshell.st_delete_help
@@ -333,7 +333,7 @@ Examples:
     signal.signal(signal.SIGINT, immediate_exit)
 
     if options.debug or options.info:
-        logging.getLogger("swiftclient")
+        logging.getLogger("zwiftclient")
         if options.debug:
             logging.basicConfig(level=logging.DEBUG)
         elif options.info:
